@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_205245) do
     t.string "host"
     t.string "state"
     t.boolean "free"
-    t.string "description"
+    t.text "description"
     t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

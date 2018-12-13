@@ -11,7 +11,7 @@ require 'faker'
     host: Faker::Company.unique.name,
     state: Faker::Address.state,
     free: Faker::Boolean.boolean,
-    description: Faker::Lorem.paragraph(3),
+    description: Faker::Lorem.paragraphs(10),
     date: Faker::Date.between(23.days.from_now,365.days.from_now)
   )
 end

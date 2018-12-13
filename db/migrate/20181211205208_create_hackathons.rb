@@ -4,7 +4,7 @@ class CreateHackathons < ActiveRecord::Migration[5.2]
       t.string :host
       t.string :state
       t.boolean :free
-      t.string :description
+      t.text :description
       t.string :date
       t.timestamps
     end
