@@ -11,13 +11,13 @@ class ApplicationController < ActionController::API
     request.authorization
   end
 
-  def current_user
+  def currentt_user
     User.find_by(decode_token["user_id"])
 
   end
 
   def logged_in
-    !!current_user
+    !!currentt_user
   end
 
 end

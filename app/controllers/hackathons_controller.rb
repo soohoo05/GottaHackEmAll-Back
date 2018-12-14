@@ -31,6 +31,13 @@ class HackathonsController < ApplicationController
     render json: @hackathons
   end
 
+def show
+
+  has=Hackathon.joins(:hackathonlists).group("hackathons.id")
+  sortedhas=has.sort_by {|obj| obj.date}
+  render json: sortedhas
+end
+
   private
   def hackathon_params
     params.require(:hackathon).permit(:state,:free,:date)
