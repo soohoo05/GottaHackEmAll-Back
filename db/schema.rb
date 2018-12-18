@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_205245) do
     t.boolean "free"
     t.text "description"
     t.string "date"
+    t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
