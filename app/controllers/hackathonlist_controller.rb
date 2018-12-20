@@ -3,7 +3,7 @@ class HackathonlistController < ApplicationController
     newhacklist=Hackathonlist.create(hacklist_params)
     @user=User.find(params[:user_id])
     hacklist=@user.hackathons
-    render json: {user: {user_id: @user.id,name:@user.name,username:@user.username,email:@user.email,hackathons:hacklist}}
+    render json: {user: {user_id: @user.id,name:@user.name,username:@user.username,email:@user.email,hackathons:hacklist,img:@user.img}}
 
   end
 
@@ -12,7 +12,7 @@ class HackathonlistController < ApplicationController
     savedhackathon[0].destroy
     @user=User.find(params[:user_id])
     hacklist=@user.hackathons
-    render json: {user: {user_id: @user.id,name:@user.name,username:@user.username,email:@user.email,hackathons:hacklist}}
+    render json: {user: {user_id: @user.id,name:@user.name,username:@user.username,email:@user.email,hackathons:hacklist,img:@user.img}}
 
   end
   private

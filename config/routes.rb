@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  patch '/users/:userId', to: 'users#update'
   post '/hackathonlist', to: 'hackathonlist#create'
   get '/current_user', to: "auth#show"
   post '/login', to: 'auth#create'

@@ -6,7 +6,7 @@ class AuthController < ApplicationController
     if user && user.authenticate(login_user_params[:password])
       hacklist=user.hackathons
       token = JWT.encode({user_id: user.id}, 'SECRET')
-      render json: {user: {user_id: user.id,name:user.name,username:user.username,email:user.email,hackathons:hacklist}, jwt: token}
+      render json: {user: {user_id: user.id,name:user.name,username:user.username,email:user.email,hackathons:hacklist,img:user.img}, jwt: token}
     else
       render json: {error: ""}, status: 400
     end
@@ -19,7 +19,7 @@ class AuthController < ApplicationController
     @user = User.find(id)
     if @user
       hacklist=@user.hackathons
-      render json: {user: {user_id: @user.id,name:@user.name,username:@user.username,email:@user.email,hackathons:hacklist}}
+      render json: {user: {user_id: @user.id,name:@user.name,username:@user.username,email:@user.email,hackathons:hacklist,img:@user.img}}
     else
       render json: {error: "some error"}, status: 422
     end
