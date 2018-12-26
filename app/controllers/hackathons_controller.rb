@@ -30,7 +30,9 @@ class HackathonsController < ApplicationController
     end
     render json: @hackathons
   end
-
+def create
+UserMailer.hackathon_email(hackathon_params).deliver_now
+end
 def show
 
   has=Hackathon.joins(:hackathonlists).group("hackathons.id")
@@ -38,9 +40,11 @@ def show
   render json: sortedhas
 end
 
+
+
   private
   def hackathon_params
-    params.require(:hackathon).permit(:state,:free,:date)
+    params.require(:hackathon).permit(:state,:free,:date,:img,:host,:description,:url)
   end
 
   def filter_params

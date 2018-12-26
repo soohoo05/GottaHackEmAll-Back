@@ -58,6 +58,7 @@ array =["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtx9iSM3gAWHnkPWo
     free: Faker::Boolean.boolean,
     description: Faker::Lorem.paragraphs(10),
     date: Faker::Date.between(23.days.from_now,365.days.from_now),
-    img: array[rand(0..array.length-1)]
+    img: array[rand(0..array.length-1)],
+    url: 'https://www.webdesignerdepot.com/cdn-origin/uploads/2017/05/featured_404.jpg'
   )
 end

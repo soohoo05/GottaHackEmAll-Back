@@ -7,6 +7,7 @@ class CreateHackathons < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :date
       t.string :img
+      t.string :url
       t.timestamps
     end
   end
