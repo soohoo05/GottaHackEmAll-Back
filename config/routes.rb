@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/hackathons', to: 'hackathons#show'
   post '/hackathons', to: 'hackathons#create'
   delete '/hackathons/:id', to: 'hackathons#destroy'
+  get '/recent/:location', to: 'hackathons#recent'
+  get '/deletepast', to: 'hackathons#deletePast'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

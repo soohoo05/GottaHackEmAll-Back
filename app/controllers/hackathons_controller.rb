@@ -41,6 +41,24 @@ def show
 end
 
 
+def recent
+  if params[:location]=="---" || params[:location]=="undefined"
+@hackathon=Hackathon.all
+sortedhas=@hackathon.sort_by {|obj| obj.date}
+recent=sortedhas[0...10]
+render json: recent
+else
+@hackathon=Hackathon.where(state:params[:location])
+sortedhas=@hackathon.sort_by {|obj| obj.date}
+recent=sortedhas[0...10]
+render json: recent
+end
+end
+
+def deletePast
+  Hackathon.where(date:"2018-01-02 10:00:00 -0500"..Time.now).destroy_all
+
+end
 
   private
   def hackathon_params
@@ -50,5 +68,7 @@ end
   def filter_params
     params.require(:hackathon).permit(:state,:free,:fromDate,:toDate)
 end
+
+
 
 end
