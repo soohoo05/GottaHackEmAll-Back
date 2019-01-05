@@ -61,8 +61,8 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
  :address => "smtp.gmail.com",
  :port => 587,
- user_name:            'gottahackemall2@gmail.com',
- password:             'tsh12345',
+ user_name:            'INSERT EMAIL HERE',
+ password:             'INSERT PASSWORD HERE',
 :enable_starttls_auto => true
 }
 end
