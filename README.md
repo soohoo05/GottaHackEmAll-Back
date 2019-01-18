@@ -2,6 +2,9 @@ Gotta Hack 'Em All Backend
 
 front end link :https://github.com/soohoo05/GottaCatchEmAll-Front
 
+
+A website that hosts a list of hackathons in the United States as well as users and the hackathons they have saved.
+
 Config email for submitting hackathons:
 config folder>environments>development.rb
 On line 64 and 65, insert email and password.
